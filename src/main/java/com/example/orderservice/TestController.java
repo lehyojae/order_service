@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class TestController {
     @GetMapping("/test")
     public String test(){
-        return "order service test";
+        return "order service test~~~~";
     }
     //json문자열로 전송하는 것이 일반적
     @GetMapping("/getdata")
