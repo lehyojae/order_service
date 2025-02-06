@@ -7,9 +7,9 @@ COPY . /myapp
 
 
 #gradel종속성을 먼저 복사해서 캐싱
-COPY gradle /myapp/gradle
-COPY gradlew /myapp/
-COPY build.gradle settings.gradle /myapp/
+#COPY gradle /myapp/gradle
+#COPY gradlew /myapp/
+#COPY build.gradle settings.gradle /myapp/
 # "gradlew"를 실행할 수 있도록 권한을 부여함
 RUN chmod +x gradlew
 # 이전 빌드에서 생성된 모든 /build/ 디렉토리 내용을 삭제하고 새롭게 빌드함
@@ -19,7 +19,8 @@ RUN chmod +x gradlew
 # -x test -> test를 제외하고 작업함
 # gradle종속성을 다운로드
 RUN ./gradlew dependencies --no-daemon
-COPY src /myapp/src
+#소스코드 복사
+#COPY src /myapp/src
 RUN ./gradlew clean build --no-daemon -x test
 
 # 자바를 실행하기 위한 작업
