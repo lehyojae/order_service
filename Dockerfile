@@ -19,6 +19,7 @@ RUN chmod +x gradlew
 # -x test -> test를 제외하고 작업함
 # gradle종속성을 다운로드
 RUN ./gradlew dependencies --no-daemon
+COPY src /myapp/src
 RUN ./gradlew clean build --no-daemon -x test
 
 # 자바를 실행하기 위한 작업
